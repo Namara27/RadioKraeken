@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Registreren</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="registreren">
+    <h1>Registreer</h1>
+    <form action="registerForm.php" method="post">
+        <label for="regUsername">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="regUsername" placeholder="Naam" id="regUsername" required>
+        <label for="regTussenvoegsel">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="regTussenvoegsel" placeholder="Tussenvoegsel" id="regTussenvoegsel">
+        <label for="regAchternaam">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="regAchternaam" placeholder="Achternaam" id="regAchternaam" required>
+        <label for="regPassword">
+            <i class="fas fa-lock"></i>
+        </label>
+        <input type="password" name="regPassword" placeholder="Wachtwoord" id="regPassword" required>
+        <label for="regRepeatPassword">
+            <i class="fas fa-lock"></i>
+        </label>
+        <input type="password" name="regRepeatPassword" placeholder="Wachtwoord herhalen" id="regRepeatPassword" required>
+        <input type="submit" value="Registreer" name="registreren">
+        <a href="login.html" id="goback">Terug naar inlog</a>
+    </form>
+</div>
+</body>
+</html>
