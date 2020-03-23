@@ -38,7 +38,7 @@ if (!isset($_SESSION['login'])) {
             }
 
             //Display the data in a table
-            $query = $conn->query("SELECT programma.programmaID, programma.naam, programma.datum, programma.begintijd, programma.eindtijd, programma.medewerkerID, medewerkers.voornaam, nummers.nummerID FROM programma, medewerkers, nummers WHERE programma.medewerkerID=medewerkers.medewerkerID AND zenderID = " . $_POST['knopOverzichtProg'] . " ");
+            $query = $conn->query("SELECT programma.programmaID, programma.naam, programma.datum, programma.begintijd, programma.eindtijd, programma.medewerkerID, medewerkers.voornaam FROM programma, medewerkers WHERE programma.medewerkerID = medewerkers.medewerkerID AND zenderID = " . $_POST['knopOverzichtProg'] . " ");
             print "<table class ='zenderoverzicht'>";
             print "<tr><th>Programma</th><th>Datum</th><th>Tijd</th><th>Presentator</th></tr>";
             foreach ($query as $row) {

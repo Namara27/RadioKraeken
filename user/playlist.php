@@ -38,10 +38,10 @@ if (!isset($_SESSION['login'])) {
         }
 
         //Display the data in a table
-        $query = $conn->query("SELECT nummerID FROM playlist WHERE programmaID = " . $_POST['knopPlaylist'] . " ");
+        $q = $conn->query("SELECT nummerID FROM playlist WHERE programmaID = " . $_POST['knopPlaylist'] . " ");
         print "<table class ='zenderoverzicht'>";
         print "<tr><th>Programma</th><th>Datum</th><th>Tijd</th><th>Presentator</th></tr>";
-        foreach ($query as $row) {
+        foreach ($q as $row) {
             print "<tr>";
             print "<td>" . $row['nummerID'] . "</td>";
 //                print "<td>" . $row['titel'] . "</td>";
