@@ -31,14 +31,17 @@ if (!isset($_SESSION['login'])) {
         <?php
         if (isset($_POST["knopPlaylist"])) {
             $sql = $conn->query("SELECT naam FROM programma WHERE programmaID = " . $_POST['knopPlaylist'] . " ");
-            echo $_POST['knopPlaylist'];
             while ($row = $sql->fetch()) {
                 print "<h3>" . $row['naam'] . "</h3>";
             }
         }
 
         //Display the data in a table
-        $q = $conn->query("SELECT nummerID FROM playlist WHERE programmaID = " . $_POST['knopPlaylist'] . " ");
+        $q = $conn->query("SELECT titel
+                                     FROM nummers, playlist
+                                     INNER JOIN playlist ON nummers.nummerID = playlist.programmaID
+                                     WHERE programmaID = " . $_POST['knopPlaylist'] . " ");
+        echo $_POST['knopPlaylist'];
         print "<table class ='zenderoverzicht'>";
         print "<tr><th>Programma</th><th>Datum</th><th>Tijd</th><th>Presentator</th></tr>";
         foreach ($q as $row) {
